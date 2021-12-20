@@ -1,5 +1,5 @@
 <div class="card my-5">
-  <div class="card-body">
+  <div class="card-body background">
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
       <tr>
@@ -8,7 +8,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let data of rpimsSensors">
+      <tr *ng="let data of rpimsSensors">
         <td>{{ data.thermowellTemperatureReadings }}</td>
         <td>{{ data.roomTemperatureReadings }}</td>
       </tr>

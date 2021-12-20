@@ -1,22 +1,33 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { RpimsSensors } from '../model/rpimsSensors';
-import { RpimsSensorsService } from '../rpims-sensors-service/rpims-sensors-service.service';
 
 @Component({
   selector: 'app-rpims-sensors-list',
   templateUrl: './rpims-sensors-list.component.html',
   styleUrls: ['./rpims-sensors-list.component.scss']
 })
+
 export class RpimsSensorsListComponent implements OnInit {
 
-  rpimsSensors!: RpimsSensors[];
+  rpimsSensors: RpimsSensors | undefined;
+  private rpimsHerokuAddress: string;
 
-  constructor(private service:RpimsSensorsService ) {
-   }
-
-  ngOnInit() {
-  this.service.getReadings().subscribe(data => {this.rpimsSensors = data;
-  });
+  constructor(private http: HttpClient) {
+    this.rpimsHerokuAddress = 'https://rpims-monitor.herokuapp.com/thermowelltmp/';
   }
 
+  public getReadings() {
+    return this.http.get<RpimsSensors>(this.rpimsHerokuAddress);
+  }
+
+  ngOnInit() {
+    this.getReadings()
+      .subscribe((data: RpimsSensors) => this.rpimsSensors = {...data});
+  }
+
+}
+
+export interface RpimsSensors {
+  thermowellTemperatureReadings: string;
+  roomTemperatureReadings: string;
 }

@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RpimsSensorsListComponent } from './rpims-sensors-list/rpims-sensors-list.component';
-import { RpimsSensorsService } from './rpims-sensors-service/rpims-sensors-service.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,7 @@ import { RpimsSensorsService } from './rpims-sensors-service/rpims-sensors-servi
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [RpimsSensorsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
