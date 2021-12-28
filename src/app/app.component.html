@@ -1,15 +1,37 @@
-  <div class="container background">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card bg-dark my-5">
-          <div class="card-body">
-            <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
-            <ul class="text-center list-inline py-3">
-                <a routerLink="/readings" class=""></a>
-            </ul>
-          </div>
+<div class="container background">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-dark my-5">
+        <div class="card-body">
+          <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
+          <ul class="text-center list-inline py-3">
+          </ul>
         </div>
-        <router-outlet></router-outlet>
+      </div>
+      <div class="card my-5">
+        <table class="table table-bordered table-striped">
+          <tr>
+            <th>Thermowell Temperature Sensor:</th>
+            <th>Room Temperature Sensor:</th>
+          </tr>
+          <tr>
+            <td>{{ sensors.thermowellTemperatureReadings }}</td>
+            <td>{{ sensors.roomTemperatureReadings }}</td>
+          </tr>
+          <tr>
+            <th>Beer temperature:</th>
+            <td><input type="text" name="beer_temp"></td>
+          </tr>
+          <tr>
+            <th>Desired carbonation:</th>
+            <td><input type="text" name="desired_carbonation"></td>
+          </tr>
+          <tr>
+            <th>Required pressure in bar <button class="calculate_button">Calculate!</button></th>
+            <td class="calculated_pressure"></td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>
+</div>
