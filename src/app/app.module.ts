@@ -5,11 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReadingsComponent } from './components/readings/readings.component';
+import { CalculatorComponent } from './components/calculator/calculator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReadingsComponent
+    ReadingsComponent,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,
