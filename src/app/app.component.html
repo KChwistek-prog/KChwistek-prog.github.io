@@ -9,18 +9,14 @@
         </div>
       </div>
       <div class="card my-5">
-        <table class="table table-bordered table-striped">
-          <tr>
-            <th>Thermowell Temperature Sensor:</th>
-            <th>Room Temperature Sensor:</th>
-          </tr>
-          <tr>
-            <td>{{ sensors.thermowellTemperatureReadings }}</td>
-            <td>{{ sensors.roomTemperatureReadings }}</td>
-          </tr>
+          <div [routerLink]="['/readingsRoute']"><app-readings></app-readings></div>      
+
+
+          <p id="table_title">Carbonation Calculator</p>
+          <table class="table table-bordered table-striped">
           <tr>
             <th>Beer temperature:</th>
-            <td><input type="text" name="beer_temp"></td>
+            <td><input #beerTempInput type="text" name="beer_temp"></td>
           </tr>
           <tr>
             <th>Desired carbonation:</th>
