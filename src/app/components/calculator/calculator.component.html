@@ -1,15 +1,31 @@
-<p id="table_title">Carbonation Calculator</p>
-<table class="table table-bordered table-striped">
-  <tr>
-    <th>Beer temperature:</th>
-    <td><input #beerTempInput type="text" name="beer_temp"></td>
-  </tr>
-  <tr>
-    <th>Desired carbonation:</th>
-    <td><input type="text" name="desired_carbonation"></td>
-  </tr>
-  <tr>
-    <th>Required pressure in bar <button class="calculate_button">Calculate!</button></th>
-    <td class="calculated_pressure"></td>
-  </tr>
-</table>
+<div class="card my-5">
+  <p id="table_title">Carbonation Calculator</p>
+
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()">
+      <tr class="form-group">
+        <td for="name">Beer temperature:</td>
+        <td></td>
+        <td><input type="text" [(ngModel)]="beer_temp" class="form-control" name="beer_temp"
+            placeholder="Enter beer temperature" required #name="ngModel"></td>
+      </tr>
+      <tr class="form-group">
+        <td for="desired_carbonation">Desired beer carbonation:</td>
+        <td></td>
+        <td>
+          <input type="text" [(ngModel)]="desired_carbonation" class="form-control" name="desired_carbonation"
+            placeholder="Desired beer carbonation" required #email="ngModel">
+        </td>
+      </tr>
+
+      <tr class="form-group">
+        <td>
+          <button type="submit" class="btn btn-info">Submit</button>
+        </td>
+        <td for="req_press">Required pressure:</td>
+
+        <td type="text" class="form-control">{{required_bar}}</td>
+      </tr>
+    </form>
+  </div>
+</div>

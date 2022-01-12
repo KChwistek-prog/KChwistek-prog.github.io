@@ -1,4 +1,4 @@
-export class Sensors {
-    thermowellTemperatureReadings!: number;
-    roomTemperatureReadings!: number;
+export interface Sensors {
+    thermowellTemperatureReadings: Number;
+    roomTemperatureReadings: Number;
 }

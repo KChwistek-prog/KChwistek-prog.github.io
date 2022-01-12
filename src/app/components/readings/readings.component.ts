@@ -8,13 +8,14 @@ import { Sensors } from 'src/app/model/sensors';
   styleUrls: ['./readings.component.scss']
 })
 export class ReadingsComponent implements OnInit {
-  sensors!: Sensors;
+  sensors: Sensors;
 
-  constructor(private readings: ReadingsService) { }
+  constructor(private readings: ReadingsService) {
+    this.sensors = {} as Sensors
+   }
 
   ngOnInit(): void {
     this.readings.getReadings().subscribe((res: Sensors) => this.sensors = res);
-
   }
 
 }
