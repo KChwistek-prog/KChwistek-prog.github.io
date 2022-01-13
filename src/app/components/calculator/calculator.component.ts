@@ -12,14 +12,15 @@ export class CalculatorComponent implements OnInit {
   beer_temp!: number;
   desired_carbonation!: number;
   required_bar: Pressure;
+  pressure: Pressure;
 
   constructor(private service: ReadingsService) {
     this.required_bar = {} as Pressure
+    this.pressure = {} as Pressure
    }
 
   onSubmit() {
-    this.service.getCarbonationPressure(this.beer_temp, this.desired_carbonation)
-    console.log(this.beer_temp, this.desired_carbonation, this.required_bar)
+    this.service.getCarbonationPressure(this.beer_temp, this.desired_carbonation).subscribe((res:Pressure) => this.pressure = res);
   }
 
   ngOnInit(): void {

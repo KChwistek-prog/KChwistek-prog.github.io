@@ -11,7 +11,7 @@ export class ReadingsComponent implements OnInit {
   sensors: Sensors;
 
   constructor(private readings: ReadingsService) {
-    this.sensors = {} as Sensors
+    this.sensors = {} as Sensors;
    }
 
   ngOnInit(): void {
