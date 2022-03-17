@@ -1,4 +1,5 @@
 export interface Sensors {
-    thermowellTemperatureReadings: Number;
-    roomTemperatureReadings: Number;
+    thermowellTemp: Number;
+    roomTemperature: Number;
+    setupPressure: Number;
 }

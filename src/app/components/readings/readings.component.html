@@ -1,13 +1,17 @@
 <div>
-    <p id="table_title">Parameters Info</p>
-    <table class="table table-bordered table-striped">
-        <tr>
-            <th>Thermowell Temperature Sensor:</th>
-            <th>Room Temperature Sensor:</th>
-        </tr>
-        <tr id="table_height">
-            <td>{{ sensors.thermowellTemperatureReadings }}</td>
-            <td>{{ sensors.roomTemperatureReadings }}</td>
-        </tr>
-    </table>
+  <p id="table_title">Parameters Info</p>
+  <table class="table table-bordered table-striped">
+    <tr id="table_height">
+      <td>Thermowell Temperature Sensor:</td>
+      <td>{{ sensors.thermowellTemp }}</td>
+    </tr>
+    <tr>
+      <td>Room Temperature Sensor:</td>
+      <td>{{ sensors."roomTemperature }}</td>
+    </tr>
+    <tr>
+      <td>Pressure:</td>
+      <td>{{ sensors.setupPressure }}</td>
+    </tr>
+  </table>
 </div>

@@ -10,12 +10,12 @@ import { Pressure } from '../model/pressure';
 export class ReadingsService {
   private url: String;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.url = 'https://rpims-monitor.herokuapp.com/'
   }
 
   public getReadings(): Observable<Sensors> {
-    return this.http.get<Sensors>(this.url + 'thermowelltmp/');
+    return this.http.get<Sensors>(this.url + 'readDataFromPiSensors');
   }
 
   public getCarbonationPressure(temperature: number, desiredCarb: number): Observable<Pressure> {
